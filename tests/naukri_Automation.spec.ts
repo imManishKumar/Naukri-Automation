@@ -13,7 +13,7 @@ test.describe('Naukri Automation', () => {
     test('Login to account', async ({page}) => {
         const username = process.env.naukri_username || '';
         const password = process.env.naukri_password || '';
-        
+        await page.route('**/gsi/client*', route => route.abort());
         await page.goto('https://www.naukri.com')
         await page.getByRole('heading', { name: 'Find your dream job now' }).isVisible()
         await page.getByRole('link', { name: 'Login', exact: true }).click()
