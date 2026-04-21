@@ -3,7 +3,8 @@ name: Naukri Resume Update
 on:
   push:
     branches: [master]
-  
+  workflow_dispatch:
+    
 jobs:
   update-resume:
     runs-on: ubuntu-latest
